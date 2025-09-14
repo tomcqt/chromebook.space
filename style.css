@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "JetBrains Mono";
+}
+
+*::selection {
+  background: #6200ff;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  /* margin: 20px; */
+  margin-top: 20px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* make sure font isnt too big */
+  font-size: 1.2vw;
+  cursor: default;
+}
+
+.fancyglowytext {
+  /* dont change this name */
+  white-space: pre-wrap;
+  line-height: 1.2;
+  /* text glow effect */
+  animation: glow 3s infinite ease-in-out;
+}
+
+.fancyextraglowytext {
+  /* idk text not glowy enough compared to logo */
+  animation: extraglow 3s infinite ease-in-out;
+}
+
+.center {
+  text-align: center;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff8, 0 0 10px #fff8, 0 0 20px #fff8;
+  }
+  50% {
+    text-shadow: 0 0 10px #fffa, 0 0 20px #fffa, 0 0 30px #fffa;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff8, 0 0 10px #fff8, 0 0 20px #fff8;
+  }
+}
+
+@keyframes extraglow {
+  0% {
+    text-shadow: 0 0 10px #fffa, 0 0 20px #fffa, 0 0 30px #fffa;
+  }
+  50% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  }
+  100% {
+    text-shadow: 0 0 10px #fffa, 0 0 20px #fffa, 0 0 30px #fffa;
+  }
+}
+
+a {
+  /* text-decoration: underline; */
+  font-weight: 1000;
+  cursor: pointer;
+}
