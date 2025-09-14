@@ -24,13 +24,15 @@ const logoascii =
 // freaking AWESOME animation :OOOOO
 // thx geode :DD
 document.addEventListener("DOMContentLoaded", () => {
-  print("[SITE] Loaded! Welcome.");
-  print("[SITE] Check out tomcat.sh :3");
+  console.log("[SITE] Loaded! Welcome.");
+  console.log("[SITE] Check out tomcat.sh :3");
+  console.log("[LOGO] Animating...");
   let parts = [];
   let lines = logoascii.split("\n");
   let i = 0;
   let interval = setInterval(() => {
     if (++i >= lines[0].length) {
+      console.log("[LOGO] Done!");
       showScreen("welcome");
       return clearInterval(interval);
     }
