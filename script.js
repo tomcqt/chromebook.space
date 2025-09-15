@@ -13,6 +13,10 @@ programmed by some people
                    [ proceed ]
 `;
       break;
+    case "version":
+      message = `
+not yet implemented! check back later :(
+      `;
     default:
       message = `
 what :sob: (something went wrong)
