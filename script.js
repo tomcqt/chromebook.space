@@ -9,7 +9,7 @@ function showScreen(screen) {
       message = `
 welcome to chromebook.space!
 every exploit for chromeos, documented and sorted.
-programmed by tomcat & geode
+programmed by some people
                    [ proceed ]
 `;
       break;

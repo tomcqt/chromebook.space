@@ -73,4 +73,23 @@ a {
   /* text-decoration: underline; */
   font-weight: 1000;
   cursor: pointer;
+  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #6200ff;
+  animation: purpleglow 3s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+@keyframes purpleglow {
+  0% {
+    text-shadow: 0 0 10px #6200ffaa, 0 0 20px #6200ffaa, 0 0 30px #6200ffaa;
+  }
+  50% {
+    text-shadow: 0 0 20px #6200ff, 0 0 30px #6200ff, 0 0 40px #6200ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #6200ffaa, 0 0 20px #6200ffaa, 0 0 30px #6200ffaa;
+  }
 }

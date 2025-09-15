@@ -102,12 +102,50 @@ function animateBox(message) {
     i += 1;
     if (i >= box.length + lines.length - box[0].length * 4) {
       clearInterval(interval);
-      document.getElementById("screen").innerHTML = document
-        .getElementById("screen")
-        .innerText.replace(
-          "[ proceed ]",
-          '<a onclick="next();">[ proceed ]</a>'
-        );
+      text = document.getElementById("screen").innerText;
+      switch (currentScreen) {
+        case "welcome":
+          text = text.replace(
+            "[ proceed ]",
+            '<a onclick="next()">[ proceed ]</a>'
+          );
+          text = text.replace(
+            "programmed by some people                          ",
+            '<span id="credits">programmed by some people                          </span>'
+          );
+      }
+      document.getElementById("screen").innerHTML = text;
+
+      if (currentScreen == "welcome") {
+        // credits
+        const credits = document.querySelector("#credits");
+        let creditsInterval;
+
+        credits.addEventListener("mouseover", () => {
+          let creditsMessage =
+            "programmed by some people                           " +
+            "main developers: tomcat (https://tomcat.sh/) & geode" +
+            "breaker (https://geodebreaker.github.io/) // contrib" +
+            "utors: none. // thanks for using!                   " +
+            "                                 "; // credits message :D
+          let i = 0;
+          creditsInterval = setInterval(() => {
+            credits.innerText = creditsMessage.slice(0, 51);
+            creditsMessage = creditsMessage.slice(1).concat(creditsMessage[0]);
+            i++;
+            if (i >= creditsMessage.length + 1) {
+              clearInterval(creditsInterval);
+            }
+          }, 100);
+        });
+
+        credits.addEventListener("mouseleave", () => {
+          clearInterval(creditsInterval);
+          credits.innerHTML =
+            "programmed by some people                          ";
+        });
+      }
+
       return;
     }
   }, 5);
