@@ -17,6 +17,7 @@ programmed by some people
       message = `
 not yet implemented! check back later :(
       `;
+      break;
     default:
       message = `
 what :sob: (something went wrong)
